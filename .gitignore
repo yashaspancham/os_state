@@ -1,2 +1,5 @@
-_pycache_/*
+__pycache__/
 .env
+monitor.sublime-workspace
+sheet.json
+os-state-fef846934c0e.json

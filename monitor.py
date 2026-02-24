@@ -1,15 +1,16 @@
-import utils
-
+import metrics
+import sheets
+import others
 
 def main():
-        state={
-                "cpu":utils.cpu_info(),
-                "memory":utils.memory_info(),
-                "disk":utils.disk_info(),
-                "os":utils.os_info(),
-        }
-        print(state)
-
+    state={
+        "cpu":metrics.cpu_info(),
+        "memory":metrics.memory_info(),
+        "disk":metrics.disk_info(),
+        "os":metrics.os_info(),
+    }
+    print(f"machine-id: {others.machine_id()} \nstate: {state}")
+    sheets.add_entry()
 
 if __name__ == "__main__":
-        main()
+    main()
