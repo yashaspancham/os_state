@@ -2,4 +2,6 @@ __pycache__/
 .env
 monitor.sublime-workspace
 sheet.json
-os-state-fef846934c0e.json
+creds.json
+os_venv
+# sheetURL-> https://docs.google.com/spreadsheets/d/1sfw_e4C1_F7CAWUbtp9qoATJzGTOG_fAlrMbPKQrgTI/edit?gid=0#gid=0

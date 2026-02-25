@@ -1,16 +1,11 @@
-import metrics
-import sheets
+from  metrics import moniter_and_collect
+from sheets import send_to_sheet
 import others
 
+
 def main():
-    state={
-        "cpu":metrics.cpu_info(),
-        "memory":metrics.memory_info(),
-        "disk":metrics.disk_info(),
-        "os":metrics.os_info(),
-    }
-    print(f"machine-id: {others.machine_id()} \nstate: {state}")
-    sheets.add_entry()
+    state=moniter_and_collect()
+    send_to_sheet(state)
 
 if __name__ == "__main__":
     main()
