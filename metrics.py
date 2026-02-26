@@ -40,7 +40,7 @@ def disk_info():
 
 
 def os_info():
-    # print({"distro_name":platform.freedesktop_os_release()})
+
     distro_name=platform.freedesktop_os_release()
     return {
         "distro_name":distro_name["NAME"],
@@ -50,4 +50,12 @@ def os_info():
         "os_verison":platform.version(),
         "kernal_version":platform.release(),
         "os_architecture":platform.machine(),
+    }
+
+def moniter_and_collect():
+    return {
+        "cpu":cpu_info(),
+        "memory":memory_info(),
+        "disk":disk_info(),
+        "os":os_info(),
     }
