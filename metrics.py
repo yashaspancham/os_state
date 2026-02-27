@@ -7,6 +7,7 @@ import psutil
 import platform
 import shutil
 
+
 def cpu_info():
     	return {
         	"number_of_cores": psutil.cpu_count(),

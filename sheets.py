@@ -3,25 +3,23 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from dotenv import load_dotenv
 import others
-load_dotenv("/home/yashas/AWS/os_state/.env")
+load_dotenv(others.get_absolute_path()+"/.env")
 
 
 def auth():
-    	scope = [
-        	"https://spreadsheets.google.com/feeds",
-        	"https://www.googleapis.com/auth/drive"
-    	]
-    	try:
-        	CREDS_FILE=os.getenv("CREDS_FILE")
-        	creds = ServiceAccountCredentials.from_json_keyfile_name(CREDS_FILE, scope)
-        	client = gspread.authorize(creds)
-        	return client
-    	except FileNotFoundError:
-        	print("Error: 'creds.json' not found. Make sure the file exists.")
-        	return None
-    	except Exception as e:
-        	print(f"Authentication falied with error: {e}")
-        	return None
+	scope = ["https://spreadsheets.google.com/feeds","https://www.googleapis.com/auth/drive"]
+	try:
+		CREDS_FILE=os.getenv("CREDS_FILE")
+		absolute_path_creds_file=others.get_absolute_path()+"/"+CREDS_FILE
+		creds = ServiceAccountCredentials.from_json_keyfile_name(absolute_path_creds_file, scope)
+		client = gspread.authorize(creds)
+		return client
+	except FileNotFoundError:
+		print("Error: 'creds.json' not found. Make sure the file exists.")
+		return None
+	except Exception as e:
+		print(f"Authentication falied with error: {e}")
+		return None
 
 
 def ping_sheet(client,SHEET_ID):

@@ -8,3 +8,4 @@ os_venv
 cron_log.log
 plan.md
 test.py
+setup.py
