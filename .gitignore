@@ -5,3 +5,6 @@ sheet.json
 creds.json
 os_venv
 # sheetURL-> https://docs.google.com/spreadsheets/d/1sfw_e4C1_F7CAWUbtp9qoATJzGTOG_fAlrMbPKQrgTI/edit?gid=0#gid=0
+cron_log.log
+plan.md
+test.py
