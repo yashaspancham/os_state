@@ -5,7 +5,6 @@ import others
 
 def main():
 	state=moniter_and_collect()
-	print("state collected")
 	send_to_sheet(state)
 
 if __name__ == "__main__":
