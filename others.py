@@ -6,4 +6,4 @@ def get_machine_id():
 
 
 def current_time():
-    return str(datetime.now())
+	return str(datetime.now())
